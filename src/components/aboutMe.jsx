@@ -1,5 +1,5 @@
 import "../styles/aboutMe.css";
 
-export default function AboutMe() {
-  return <div className="about-me-container"></div>;
+export default function AboutMePage() {
+  return <div className="about-me-container">About Me</div>;
 }
