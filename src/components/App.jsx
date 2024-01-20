@@ -47,8 +47,9 @@ function App() {
 
   return (
     <>
+      <div className="scroll-bg"></div>
+      <NavBar isMobile={isMobile} handleNavClick={handleNavigation} />
       <div className="content">
-        <NavBar isMobile={isMobile} handleNavClick={handleNavigation} />
         <Routes>
           <Route path="/" element={<AboutMePage />} />
           <Route path="/experience" element={<ExperiencePage />} />

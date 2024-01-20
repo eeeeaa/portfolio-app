@@ -38,10 +38,10 @@ function MenuSection({ handleNavClick }) {
 
 function Menu({ handleNavClick }) {
   return (
-    <>
+    <div className="nav-menu-container">
       <NameLogo title={"Tantai Layluxsiri"} />
       <MenuSection handleNavClick={handleNavClick} />
-    </>
+    </div>
   );
 }
 
