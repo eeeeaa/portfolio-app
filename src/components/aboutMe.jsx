@@ -69,7 +69,7 @@ function ProfileImage() {
 
 export default function AboutMePage() {
   return (
-    <div className="about-me-content">
+    <div>
       <div className="about-me-container">
         <ProfileImage />
         <AboutMeSection />
