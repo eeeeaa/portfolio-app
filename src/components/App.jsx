@@ -47,7 +47,6 @@ function App() {
 
   return (
     <>
-      <div className="scroll-bg"></div>
       <NavBar isMobile={isMobile} handleNavClick={handleNavigation} />
       <div className="content">
         <Routes>
