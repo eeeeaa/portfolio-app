@@ -39,7 +39,7 @@ function MenuSection({ handleNavClick }) {
 function Menu({ handleNavClick }) {
   return (
     <>
-      <NameLogo title={"Dummy"} />
+      <NameLogo title={"Tantai Layluxsiri"} />
       <MenuSection handleNavClick={handleNavClick} />
     </>
   );

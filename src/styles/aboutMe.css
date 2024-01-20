@@ -1,0 +1,97 @@
+.about-me-content {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.about-me-container {
+  max-width: 1000px;
+  min-height: 450px;
+  display: grid;
+  grid-template: 1fr 2fr / repeat(3, 1fr);
+  gap: 1em;
+}
+
+.about-me-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-image {
+  grid-area: 1/ 1 / -1 / 2;
+  background-image: url("../assets/profile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.5em;
+}
+
+.about-me-section,
+.hard-skill-section,
+.soft-skill-section,
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.about-me-section {
+  gap: 1em;
+  grid-area: 1/2/2/-1;
+
+  .about-me-title {
+    font-size: xx-large;
+    font-weight: 700;
+  }
+
+  .about-me-description {
+    font-size: medium;
+    font-weight: 300;
+  }
+}
+
+.hard-skill-section {
+  grid-area: 2/2/-1/3;
+
+  .hard-skill-title {
+    font-size: x-large;
+    font-weight: 700;
+  }
+}
+
+.soft-skill-section {
+  grid-area: 2/3/-1/-1;
+
+  .soft-skill-title {
+    font-size: x-large;
+    font-weight: 700;
+  }
+}
+
+.skill-list {
+  gap: 1em;
+}
+
+.skill-item {
+  background-color: #1e293b;
+  border-radius: 1em;
+  padding: 0.2em 0.5em;
+}
+
+@media (max-width: 768px) {
+  .about-me-container {
+    display: flex;
+    flex-direction: column;
+    max-width: auto;
+    min-height: auto;
+  }
+  .profile-image {
+    height: 500px;
+  }
+
+  .about-me-section,
+  .hard-skill-section,
+  .soft-skill-section,
+  .skill-list {
+    align-items: center;
+  }
+}
