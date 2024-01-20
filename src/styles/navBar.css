@@ -34,17 +34,10 @@
   color: #94a3b8;
 }
 
-.mobile-menu-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-
 @media (max-width: 768px) {
-  .nav-bar {
+  .nav-menu-container {
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
+    gap: 0;
   }
 }
