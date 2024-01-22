@@ -13,8 +13,8 @@ body {
     #1e293b 51%,
     #334155 100%
   );
-  -webkit-animation: AnimateBG 60s ease infinite;
-  animation: AnimateBG 60s ease infinite;
+  -webkit-animation: AnimateBG 40s ease infinite;
+  animation: AnimateBG 40s ease infinite;
 }
 
 @-webkit-keyframes AnimateBG {

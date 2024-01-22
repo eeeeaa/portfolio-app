@@ -77,6 +77,11 @@
   border-radius: 1em;
   padding: 0.5em 1em;
   font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.04);
 }
 
 @media (max-width: 768px) {
@@ -95,5 +100,10 @@
   .soft-skill-section,
   .skill-list {
     align-items: center;
+  }
+
+  .skill-item {
+    max-width: 200px;
+    text-align: center;
   }
 }
