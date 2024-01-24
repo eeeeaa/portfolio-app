@@ -11,3 +11,10 @@ export async function getExperience() {
 
   return json;
 }
+
+export async function getEducation() {
+  let response = await fetch("/data/education.json");
+  let json = await response.json();
+
+  return json;
+}

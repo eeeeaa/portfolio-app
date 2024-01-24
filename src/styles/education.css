@@ -1,0 +1,77 @@
+.education-container {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  .edu-title {
+    font-size: xx-large;
+    font-weight: 700;
+  }
+
+  .edu-secondary-section {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    h2 {
+      font-size: medium;
+      font-weight: 400;
+    }
+  }
+
+  .edu-description {
+    font-size: x-large;
+    font-weight: 200;
+    text-align: justify;
+  }
+
+  .relevant-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .course-title {
+    align-self: center;
+    font-size: xx-large;
+    font-weight: 700;
+  }
+
+  .course-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .course-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #1f2937;
+    box-shadow: 10px 12px 0px 0px #111827;
+    transition: transform 0.2s ease-in-out;
+
+    border-radius: 1em;
+
+    .course-name {
+      text-align: center;
+      font-size: medium;
+      font-weight: 200;
+      max-width: 150px;
+    }
+  }
+
+  .course-card:hover {
+    transform: scale(1.02);
+  }
+}
