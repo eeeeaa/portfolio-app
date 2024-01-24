@@ -18,3 +18,10 @@ export async function getEducation() {
 
   return json;
 }
+
+export async function getContacts() {
+  let response = await fetch("/data/contacts.json");
+  let json = await response.json();
+
+  return json;
+}
