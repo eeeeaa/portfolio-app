@@ -3,8 +3,6 @@ import "../styles/contacts.css";
 import gitHubIcon from "../assets/icon/github.svg";
 import linkedInIcon from "../assets/icon/linkedin.svg";
 import googleIcon from "../assets/icon/google.svg";
-import { useState, useEffect } from "react";
-import { getContacts } from "../utils/dataLoader";
 
 const iconObjs = [
   {
@@ -75,14 +73,7 @@ function ContactsContent({ title, json }) {
   );
 }
 
-export default function ContactsPage() {
-  const [contactsJson, setContactsJson] = useState(null);
-
-  useEffect(() => {
-    getContacts().then((data) => {
-      setContactsJson(data);
-    });
-  });
+export default function ContactsPage({ contactsJson }) {
   return (
     <div className="contacts-container">
       <ContactsContent title={"Get in touch"} json={contactsJson} />

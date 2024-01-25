@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import "../styles/aboutMe.css";
-import { getAboutMe } from "../utils/dataLoader";
-import { useState, useEffect } from "react";
 
 function SkillItem({ skillLabel }) {
   return <li className="skill-item">{skillLabel}</li>;
@@ -58,15 +56,7 @@ function AboutMeContent({ aboutJson }) {
   );
 }
 
-export default function AboutMePage() {
-  const [aboutJson, setAboutJson] = useState(null);
-
-  useEffect(() => {
-    getAboutMe().then((data) => {
-      setAboutJson(data);
-    });
-  });
-
+export default function AboutMePage({ aboutJson }) {
   return (
     <div>
       <div className="about-me-container">

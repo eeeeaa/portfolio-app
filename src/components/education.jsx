@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
-import { getEducation } from "../utils/dataLoader";
 import "../styles/education.css";
 
 function CourseCard({ title }) {
@@ -66,15 +64,7 @@ function EducationContent({ json }) {
   );
 }
 
-export default function EducationPage() {
-  const [educationJson, setEducationJson] = useState(null);
-
-  useEffect(() => {
-    getEducation().then((data) => {
-      setEducationJson(data);
-    });
-  });
-
+export default function EducationPage({ educationJson }) {
   return (
     <div className="education-container">
       <EducationContent json={educationJson} />

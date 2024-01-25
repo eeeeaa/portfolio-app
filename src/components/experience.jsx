@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import "../styles/experience.css";
-import { useState, useEffect } from "react";
-import { getExperience } from "../utils/dataLoader";
 
 function ExperienceCard({ title, date, description, imageUrl, isRightSide }) {
   const actualRow = isRightSide ? "row-2" : "row-1";
@@ -43,15 +41,7 @@ function ExperienceContent({ json }) {
   );
 }
 
-export default function ExperiencePage() {
-  const [experienceJson, setExperienceJson] = useState(null);
-
-  useEffect(() => {
-    getExperience().then((data) => {
-      setExperienceJson(data);
-    });
-  });
-
+export default function ExperiencePage({ experienceJson }) {
   return (
     <div>
       <div className="experience-page-container">
