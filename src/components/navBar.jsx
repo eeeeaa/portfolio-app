@@ -32,6 +32,7 @@ function MenuSection({ handleNavClick }) {
         handleNavClick={handleNavClick}
         label={"Contacts"}
       />
+      <NavItem pageIndex={4} handleNavClick={handleNavClick} label={"Edit"} />
     </ul>
   );
 }

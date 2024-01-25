@@ -3,22 +3,21 @@ import AboutMePage from "./aboutMe";
 import ExperiencePage from "./experience";
 import EducationPage from "./education";
 import ContactsPage from "./contacts";
+import EditFormPage from "./editForm";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import {
-  getAboutMe,
-  getContacts,
-  getEducation,
-  getExperience,
-} from "../utils/dataLoader";
+import { getAboutMeData } from "../data/aboutMeData";
+import { getExperienceData } from "../data/experienceData";
+import { getEducationData } from "../data/educationData";
+import { getContactsData } from "../data/contactsData";
 import "../styles/App.css";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [aboutJson, setAboutJson] = useState(null);
-  const [experienceJson, setExperienceJson] = useState(null);
-  const [educationJson, setEducationJson] = useState(null);
-  const [contactsJson, setContactsJson] = useState(null);
+  const [aboutJson, setAboutJson] = useState(getAboutMeData());
+  const [experienceJson, setExperienceJson] = useState(getExperienceData());
+  const [educationJson, setEducationJson] = useState(getEducationData());
+  const [contactsJson, setContactsJson] = useState(getContactsData());
   const isMobile = width <= 768;
 
   const navigate = useNavigate();
@@ -41,6 +40,10 @@ function App() {
         navigate("/contacts");
         break;
       }
+      case 4: {
+        navigate("/edit");
+        break;
+      }
     }
   };
 
@@ -49,22 +52,6 @@ function App() {
   };
 
   useEffect(() => {
-    getAboutMe().then((data) => {
-      setAboutJson(data);
-    });
-
-    getExperience().then((data) => {
-      setExperienceJson(data);
-    });
-
-    getEducation().then((data) => {
-      setEducationJson(data);
-    });
-
-    getContacts().then((data) => {
-      setContactsJson(data);
-    });
-
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
@@ -89,6 +76,7 @@ function App() {
             path="/contacts"
             element={<ContactsPage contactsJson={contactsJson} />}
           />
+          <Route path="/edit" element={<EditFormPage />} />
         </Routes>
       </div>
     </>
