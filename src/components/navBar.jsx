@@ -32,24 +32,23 @@ function MenuSection({ handleNavClick }) {
         handleNavClick={handleNavClick}
         label={"Contacts"}
       />
-      <NavItem pageIndex={4} handleNavClick={handleNavClick} label={"Edit"} />
     </ul>
   );
 }
 
-function Menu({ handleNavClick }) {
+function Menu({ handleNavClick, fullName }) {
   return (
     <div className="nav-menu-container">
-      <NameLogo title={"Tantai Layluxsiri"} />
+      <NameLogo title={fullName} />
       <MenuSection handleNavClick={handleNavClick} />
     </div>
   );
 }
 
-export default function NavBar({ handleNavClick }) {
+export default function NavBar({ handleNavClick, fullName }) {
   return (
     <div className="nav-bar">
-      <Menu handleNavClick={handleNavClick} />
+      <Menu handleNavClick={handleNavClick} fullName={fullName} />
     </div>
   );
 }

@@ -31,11 +31,11 @@ function SoftSkillSection({ softSkills }) {
   );
 }
 
-function AboutMeSection({ about }) {
+function AboutMeSection({ about, fullName, nickName }) {
   return (
     <div className="about-me-section">
       <div className="about-me-title">About Me</div>
-      <div className="about-me-description">{about}</div>
+      <div className="about-me-description">{about(fullName, nickName)}</div>
     </div>
   );
 }
@@ -49,7 +49,11 @@ function AboutMeContent({ aboutJson }) {
 
   return (
     <>
-      <AboutMeSection about={aboutJson.about} />
+      <AboutMeSection
+        about={aboutJson.about}
+        fullName={aboutJson.name}
+        nickName={aboutJson.nickName}
+      />
       <HardSkillSection hardSkills={aboutJson.hardSkills} />
       <SoftSkillSection softSkills={aboutJson.softSkills} />
     </>

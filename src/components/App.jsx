@@ -3,7 +3,6 @@ import AboutMePage from "./aboutMe";
 import ExperiencePage from "./experience";
 import EducationPage from "./education";
 import ContactsPage from "./contacts";
-import EditFormPage from "./editForm";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { getAboutMeData } from "../data/aboutMeData";
@@ -60,7 +59,11 @@ function App() {
 
   return (
     <>
-      <NavBar isMobile={isMobile} handleNavClick={handleNavigation} />
+      <NavBar
+        isMobile={isMobile}
+        handleNavClick={handleNavigation}
+        fullName={aboutJson.name}
+      />
       <div className="content">
         <Routes>
           <Route path="/" element={<AboutMePage aboutJson={aboutJson} />} />
@@ -76,7 +79,6 @@ function App() {
             path="/contacts"
             element={<ContactsPage contactsJson={contactsJson} />}
           />
-          <Route path="/edit" element={<EditFormPage />} />
         </Routes>
       </div>
     </>
