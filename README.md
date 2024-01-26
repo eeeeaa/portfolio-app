@@ -1,6 +1,6 @@
-# CV Application Project
+# My Portfolio
 
-this is my CV application project following the Odin Project tutorial.
+My Portfolio website project made using React and vite.
 
 # React + Vite
 
